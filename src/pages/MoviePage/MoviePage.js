@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getMovie } from "../../api/api";
 import { Movie } from "../../components/Movie/Movie";
@@ -10,12 +10,12 @@ export const MoviePage = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
-  const handleMovie = async () => {
-    const movieData = await getMovie(id);
+  const handleMovie = async (movie_id) => {
+    const movieData = await getMovie(movie_id);
     setMovie(movieData);
   };
-  useEffect(() => {
-    handleMovie();
+  useMemo(() => {
+    handleMovie(id);
   }, [id]);
   const handleBack = () => {
     navigate(-1);
