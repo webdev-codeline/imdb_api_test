@@ -1,0 +1,13 @@
+.back-container {
+    display: flex;
+    padding: 20px;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+}
+
+.page-left-margin {
+    margin-left: 100px
+}

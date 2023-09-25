@@ -1,0 +1,17 @@
+.desc-container {
+    display: flex;
+    gap: 20px
+}
+
+.poster {
+    width: 100%;
+}
+
+
+.random-movie-container {
+    margin-top: 50px;
+}
+
+.random-container {
+    margin-bottom: 20px;
+}

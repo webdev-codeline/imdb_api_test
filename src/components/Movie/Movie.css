@@ -1,0 +1,35 @@
+.iframe-container {
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+}
+
+.trailer {
+    position: "absolute";
+    top: 0;
+    left: 0;
+    width: "100%";
+    height: "100%";
+}
+
+.container-padding {
+    padding-bottom: 10px;
+}
+
+p {
+    font-size:large;
+}
+
+label {
+    font-size: larger;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.main-desc-container {
+    padding-top: 20px;
+}
+
+.description-container {
+    padding-top: 20px;
+}
