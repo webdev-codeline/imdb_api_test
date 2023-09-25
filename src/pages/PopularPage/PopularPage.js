@@ -1,11 +1,8 @@
-import React, { useState, useEffect, Suspense } from "react";
-import Button from "@mui/material/Button";
-import { RandomMovie } from "../../components/RandomMovie/RandomMovie";
+import React, { useState, useEffect } from "react";
 import { MostPopular } from "../../components/MostPopular/MostPopular";
 import { MoviePageHeader } from "../../components/MoviePageHeader/MoviePageHeader";
 import { getTopMovies } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import { CircularProgress } from "@mui/material";
 import { CustomProgress } from "../../components/CustomProgress/CustomProgress";
 
 export const PopularPage = () => {

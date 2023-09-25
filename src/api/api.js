@@ -2,7 +2,7 @@ import { API_KEY, API_URL } from "../constants/config";
 
 export const getTopMovies = async () => {
   try {
-    const url = `${API_URL}/Top250Movies/${API_KEY}`;
+    const url = `${API_URL}/MostPopularMovies/${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
     return data?.items;

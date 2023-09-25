@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { RandomMovie } from "../../components/RandomMovie/RandomMovie";
 import "./RandomPage.css";
-import { Link, useLocation } from "react-router-dom";
 import { MoviePageHeader } from "../../components/MoviePageHeader/MoviePageHeader";
 import { getRandomMovie } from "../../api/api";
-import { CircularProgress } from "@mui/material";
 import { CustomProgress } from "../../components/CustomProgress/CustomProgress";
 export const RandomPage = () => {
   const [selectedMovie, setSelectedMovie] = useState();
