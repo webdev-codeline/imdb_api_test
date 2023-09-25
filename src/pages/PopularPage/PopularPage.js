@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { MostPopular } from "../../components/MostPopular/MostPopular";
+import React, { useState, useEffect, useMemo } from "react";
+import { MovieList } from "../../components/MovieList/MovieList";
 import { MoviePageHeader } from "../../components/MoviePageHeader/MoviePageHeader";
 import { getTopMovies } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import { CustomProgress } from "../../components/CustomProgress/CustomProgress";
 
 export const PopularPage = () => {
   const [movies, setMovies] = useState();
@@ -12,7 +11,7 @@ export const PopularPage = () => {
     const movies = await getTopMovies();
     setMovies(movies);
   };
-  useEffect(() => {
+  useMemo(() => {
     fetchMovies();
   }, []);
   const handleClick = (movieId) => {
@@ -21,24 +20,8 @@ export const PopularPage = () => {
   return (
     <div className="page-container">
       <MoviePageHeader active="popular" />
-      {movies ? (
-        <div className="page-container">
-          {movies?.map((movie) => (
-            <MostPopular
-              key={movie.id}
-              id={movie.id}
-              title={movie.title}
-              year={movie.year}
-              thumbnail={movie.image}
-              rating={movie.imDbRating}
-              rank={movie.rank}
-              handleClick={handleClick}
-            />
-          ))}
-        </div>
-      ) : (
-        <CustomProgress />
-      )}
+      <MovieList movies={movies} handleClick={handleClick}/>
+ 
     </div>
   );
 };
