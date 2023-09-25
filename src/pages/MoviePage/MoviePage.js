@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getMovie } from "../../api/api";
 import { Movie } from "../../components/Movie/Movie";
@@ -14,7 +14,7 @@ export const MoviePage = () => {
     const movieData = await getMovie(movie_id);
     setMovie(movieData);
   };
-  useMemo(() => {
+  useEffect(() => {
     handleMovie(id);
   }, [id]);
   const handleBack = () => {
